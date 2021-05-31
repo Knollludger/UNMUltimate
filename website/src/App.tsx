@@ -8,15 +8,19 @@ function App() {
     <div className="App">
       <Header></Header>
       <header className="App-header">
-        <div className="row">
-          <div className="col">
+        <div className="container-fluid">
+          <div className="row">
+          <div className="col-lg-2">
             <FaBiohazard className="App-logo" size={150} />
           </div>
-          <div className="col">
+          <div className="col-lg-8">
+            <p>Coming to a University of New Mexico Near You!</p>
+          </div>
+          <div className="col-lg-2">
             <FaBomb className="App-logo" size={150} />
           </div>
+          </div>
         </div>
-        <p>Coming to a University of New Mexico Near You!</p>
       </header>
     </div>
   );
