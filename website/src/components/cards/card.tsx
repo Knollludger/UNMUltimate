@@ -1,16 +1,27 @@
-import React from "react";
-
+import { FC, useState } from "react";
+import "./card.css";
+import { Collapse } from "react-bootstrap";
 interface CardProps {
-    icon: string;
-    text: string;
+  icon: FC;
+  title: string;
+  text: string;
 }
 
-const Card:React.FC<CardProps>  = (props: CardProps) =>  {
-    return (
-      <div className="card">
-          <p>hi</p>
+const Card: FC<CardProps> = (props: CardProps) => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div>
+      <div className="app-card" onClick={() => setOpen(!open)}>
+        <props.icon></props.icon>
+        {props.title}
+        <props.icon></props.icon>
       </div>
-    );
-}
+      <Collapse in={open} className="app-body">
+        <div>{props.text}</div>
+      </Collapse>
+    </div>
+  );
+};
 
 export default Card;
